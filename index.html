@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>If You Don't Mind, Can I Have The Time</title>
+</head>
+<body>
+    <h1>If You Don't Mind, Can I Have The Time</h1>
+    
+    <script>
+    var HOUR = 8;
+    var MINUTE= 50;
+    var PERIOD= "AM";
+
+    // if minutes less than 30, "just after" the hour, more than 30, "almost the" hour
+    // AM/PM "in the morning", "in the evening"
+    //  Bonus add functionality for "quarter after", "half past", "5 after"...
+    // Distinguish between "in the afternoon", "at night", "noon", "midnight"
+
+    function time(HOUR, MINUTE, PERIOD){
+        if(HOUR== 12 && MINUTE== 00 && PERIOD== "AM"){
+            console.log("It's midnight.")
+        }
+        else if(HOUR== 12 && MINUTE== 00 && PERIOD== "PM"){
+            console.log("It's noon.");
+        }
+        else if(MINUTE==00 && PERIOD== "AM"){
+            console.log("It's", HOUR, "o'clock in the morning");
+        }
+        else if(MINUTE==00 && PERIOD== "PM"){
+            console.log("It's", HOUR, "o'clock in the evening");
+        }
+        else if(MINUTE<=05 && PERIOD== "AM"){
+            console.log("It's five after", HOUR, "in the morning.");
+        }
+        else if(MINUTE<=05 && PERIOD== "PM"){
+            console.log("It's five after", HOUR, "in the evening.");
+        }
+        else if(MINUTE<=15 && PERIOD== "AM"){
+            console.log("It's a quarter after", HOUR, "in the morning.");
+        }
+        else if(MINUTE<=15 && PERIOD== "PM"){
+            console.log("It's a quarter after", HOUR, "in the evening.");
+        }
+        else if(MINUTE<=30 && PERIOD== "AM"){
+            console.log("It's a half past", HOUR, "in the morning.");
+        }
+        else if(MINUTE<=30 && PERIOD== "AM"){
+            console.log("It's a half past", HOUR, "in the evening.");
+        }
+        else if(MINUTE>30 && PERIOD== "AM"){
+            console.log("It's a almost", HOUR, "in the morning.");
+        }
+        else if(MINUTE>30 && PERIOD== "PM"){
+            console.log("It's a almost", HOUR, "in the evening.");
+        }
+        else if(MINUTE>60 && PERIOD== "AM"){
+            console.log("It's a almost", HOUR, "in the morning.");
+        }
+        else if(MINUTE>60 && PERIOD== "PM"){
+            console.log("It's a almost", HOUR, "in the evening.");
+        }
+        else{
+            console.log("I don't know the time.")
+        }
+        
+    }
+
+    time(HOUR, MINUTE, PERIOD);
+
+    HOUR= 7;
+    MINUTE= 15;
+    PERIOD= "PM";
+
+    time(HOUR, MINUTE, PERIOD);
+
+    HOUR= 12;
+    MINUTE= 00;
+    PERIOD= "AM";
+
+    time(HOUR, MINUTE, PERIOD);
+
+    HOUR= 12;
+    MINUTE= 00;
+    PERIOD= "PM";
+
+    time(HOUR, MINUTE, PERIOD);
+
+    HOUR= 3;
+    MINUTE= 00;
+    PERIOD= "AM";
+
+    time(HOUR, MINUTE, PERIOD);
+
+    HOUR= 7;
+    MINUTE= 00;
+    PERIOD= "PM";
+
+    time(HOUR, MINUTE, PERIOD);
+
+    </script>
+
+</body>
+</html>
